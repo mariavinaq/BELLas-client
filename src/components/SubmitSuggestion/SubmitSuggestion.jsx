@@ -22,11 +22,12 @@ function SubmitSuggestion() {
                 placeholder="Enter your email address"
             />
             <label htmlFor="email" className="submit-form__label">Problem</label>
-            <input
-                type="email"
-                id="email"
+            <textarea
+                id="problem"
                 className="submit-form__description"
                 placeholder=" "
+                rows="4" 
+                cols="50" 
             />
             <div className="submit-form__buttons">
                 <button type="button" className="submit-form__button submit-form__button--submit">Submit your suggestion</button>

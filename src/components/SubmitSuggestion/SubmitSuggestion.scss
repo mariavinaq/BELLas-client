@@ -29,14 +29,22 @@
         font-size: 1.6rem;
         height: 4.5rem;
         color: $color-black;
+        &:focus {
+            outline: none; 
+        }
+        
+
     }
     &__description{
         border: 0.2rem solid $color-grey;
-        padding-bottom:4rem;
+        padding:1rem;
         font-size: 1.6rem;
         height: 15rem;
         color: $color-black;
         border-radius: 2rem;
+        &:focus {
+            outline: none; 
+        }
 
     }
     &__buttons{
