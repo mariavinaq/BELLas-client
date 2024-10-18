@@ -6,7 +6,7 @@ import './SuggestionOption.scss'
 function SuggestionOption({ suggestion }) {
     const navigate = useNavigate();
     const handleOnClick = () => {
-        navigate('/vote')
+        navigate('/vote', { state: { suggestion } });
     };
 
     return (

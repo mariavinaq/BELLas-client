@@ -1,28 +1,33 @@
+import { useNavigate, useLocation } from 'react-router-dom';
 import './SuggestionForm.scss';
-import { useNavigate } from 'react-router-dom';
 
 function SuggestionForm() {
     const navigate = useNavigate();
-    const handleHomeClick = () => {
-        navigate('/')
-        
-    };
-    const handleSuggestionClick = () => {
-        navigate('/submitsuggestion')
+    const location = useLocation();
+    const suggestion = location.state?.suggestion;
 
+    const handleHomeClick = () => {
+        navigate('/');
     };
+
+    const handleSuggestionClick = () => {
+      
+        navigate('/submitsuggestion'); 
+    };
+
     return (
         <>
             <h1 className="suggestion-form__title">Voting for:</h1>
-            <p className="suggestion-form__description">After-school program for elementary school kids</p>
-        
-            <form className="suggestion-form" action="submit">
+            <p className="suggestion-form__description">{suggestion?.suggestion || "No suggestion provided"}</p>
+
+            <form className="suggestion-form" onSubmit={handleSuggestionClick}>
                 <label htmlFor="email" className="suggestion-form__label">Email</label>
                 <input
                     type="email"
                     id="email"
                     className="suggestion-form__input"
                     placeholder="Enter your email address"
+                    required 
                 />
 
                 <div className="suggestion-form__notify">
@@ -36,11 +41,11 @@ function SuggestionForm() {
                 </div>
 
                 <div className="suggestion-form__buttons">
-                    <button type="submit" className="suggestion-form__button suggestion-form__button--submit" onClick={ handleSuggestionClick}>Submit your vote</button>
-                    <button type="button" className="suggestion-form__button suggestion-form__button--back" onClick={handleHomeClick}>Back to Home</button >
+                    <button type="submit" className="suggestion-form__button suggestion-form__button--submit">Submit your vote</button>
+                    <button type="button" className="suggestion-form__button suggestion-form__button--back" onClick={handleHomeClick}>Back to Home</button>
                 </div>
             </form>
-         </>
+        </>
     );
 }
 
