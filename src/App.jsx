@@ -11,14 +11,18 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <div className="all-wrapper">
+        <div className="mobile-wrapper">
         <Header />
-        <Routes>
-          <Route path="/" element={<Feed />}></Route>
-          <Route path="/vote" element={<SuggestionForm />}></Route>
-          <Route path="/vote/thanks" element={<VoteThanks />}></Route>
-          <Route path="/submit" element={<SubmitSuggestion />}></Route>
-          <Route path="/submit/thanks" element={<SuggestionThanks />}></Route>
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Feed />}></Route>
+            <Route path="/vote" element={<SuggestionForm />}></Route>
+            <Route path="/vote/thanks" element={<VoteThanks />}></Route>
+            <Route path="/submit" element={<SubmitSuggestion />}></Route>
+            <Route path="/submit/thanks" element={<SuggestionThanks />}></Route>
+          </Routes>
+        </div>
+        </div>
       </BrowserRouter>
     </>
   );
