@@ -1,7 +1,14 @@
 import React from 'react'
 import './submitsuggestion.scss'
+import { useNavigate } from 'react-router-dom';
+
 
 function SubmitSuggestion() {
+    const navigate = useNavigate();
+    const handleThanksClick = () => {
+        navigate('/suggestion/thanks')
+    };
+    
   return (
     <>
         <h1 className="submit-form__title">Your suggestion</h1>
@@ -30,7 +37,7 @@ function SubmitSuggestion() {
                 cols="50" 
             />
             <div className="submit-form__buttons">
-                <button type="button" className="submit-form__button submit-form__button--submit">Submit your suggestion</button>
+                <button type="button" className="submit-form__button submit-form__button--submit" onClick={handleThanksClick}>Submit your suggestion</button>
             </div>
         </form>
       </>
