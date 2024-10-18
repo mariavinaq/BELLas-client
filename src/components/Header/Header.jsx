@@ -1,7 +1,7 @@
 import "./Header.scss";
 
 function Header() {
-  return <div>Bell Header</div>;
+  return <div className='header'></div>;
 }
 
 export default Header;
