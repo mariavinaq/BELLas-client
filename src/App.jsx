@@ -13,6 +13,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Feed />}></Route>
           <Route path="/suggestion" element={<SuggestionForm />}></Route>
+          <Route path="/vote" element={<SuggestionForm />}></Route>
+          {/* {* added for yvonne's testing */}
         </Routes>
       </BrowserRouter>
     </>
