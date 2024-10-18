@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const baseUrl = 'http://localhost:8080';
-const baseUrl = 'http://localhost:5050';
+const baseUrl = 'http://localhost:8080';
+// const baseUrl = 'http://localhost:5050';
 
 
 const getSuggestions = async () => {
@@ -13,13 +13,22 @@ const getSuggestions = async () => {
     }
 };
 
-const postSuggestion = async () => {
+const postSuggestion = async (suggestion) => {
     try {
-        const response = await axios.post(`${baseUrl}/suggestions`);
+        const response = await axios.post(`${baseUrl}/suggestions`, suggestion);
         return response.data;
     } catch (error) {
         console.error(`${error.status}: Post request for suggestion failed`);
     }
 };
 
-export { getSuggestions, postSuggestion };
+const postVote = async (vote) => {
+    try {
+        const response = await axios.post(`${baseUrl}/votes`, vote);
+        return response.data;
+    } catch (error) {
+        console.error(`${error.status}: Post request for vote failed`);
+    }
+};
+
+export { getSuggestions, postSuggestion, postVote };
