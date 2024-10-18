@@ -1,0 +1,10 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/font' as *;
+
+
+.suggestion-form{
+    display:flex;
+    flex-direction: column;
+    
+}
