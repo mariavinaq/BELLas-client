@@ -13,7 +13,6 @@
         padding-bottom:1rem ;
         font-size: 3.2rem;
         line-height: 3.2rem;
-        color: $color-blue;
     }
     &__description{
         padding:1rem;
@@ -35,6 +34,9 @@
         font-size: 1.6rem;
     }
     &__notify{
+        display: flex;
+        flex-direction: row;
+        gap:1rem;
         font-size: 1.6rem;
         color:$color-blue;
         padding-bottom:24rem;
@@ -72,8 +74,6 @@
         color: $color-blue;
         }
     }
-
-
-
+ 
     
 }
