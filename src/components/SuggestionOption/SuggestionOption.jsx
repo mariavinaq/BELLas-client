@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import chevron from '../../assets/images/chevron.svg'
 import heart from '../../assets/images/heart.svg'
-import VoteForm from '../VoteForm/VoteForm';
 import './SuggestionOption.scss'
 
 function SuggestionOption({ suggestion }) {
+    const navigate = useNavigate();
     const handleOnClick = () => {
+        navigate('/vote')
     };
 
     return (
