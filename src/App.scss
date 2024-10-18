@@ -1,1 +1,9 @@
 @use './styles/partials/global.scss' as *;
+
+.mobile-wrapper {
+    background-color: white;
+    min-width: 430px;
+    max-width: 430px;
+    height: 110vh;
+    margin: 0 auto;
+}

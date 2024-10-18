@@ -1,0 +1,44 @@
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 2.4rem 3.2rem;
+  border-top: 1px solid #939393;
+  border-bottom: 1px solid #939393;
+  background-color: $color-white;
+
+  &__description {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-size: 1.6rem;
+    letter-spacing: -0.8px;
+    padding-right: 1.6rem;
+  }
+
+  &__vote {
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    border: none;
+    font-size: 1.6rem;
+    text-align: right;
+    letter-spacing: -0.8px;
+
+    &--likes {
+      color: $color-blue;
+      width: 20%;
+    }
+
+    &--action {
+      cursor: pointer;
+    }
+  }
+
+  &__heart {
+    margin-right: 0.5rem;
+  }
+}
