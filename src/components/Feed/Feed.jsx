@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { getSuggestions } from '../../api';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/Bell_logo.svg'
 import SuggestionOption from '../SuggestionOption/SuggestionOption';
 import './Feed.scss';
 
 function Feed() {
+    const navigate = useNavigate();
     const [suggestionsList, setSuggestionsList] = useState([]);
     const [selectedTop, setSelectedTop] = useState(true);
     const [selectedNew, setSelectedNew] = useState(false);
@@ -47,6 +49,10 @@ function Feed() {
         setSelectedAll(true);
     };
 
+    const handleSuggestion = () => {
+        navigate('/submit');
+    }
+
     return (
         <div className='feed'>
             <div className='feed__hero'>
@@ -62,6 +68,9 @@ function Feed() {
             <div className='feed__main'>
                 {suggestionsList.map(suggestion => <SuggestionOption suggestion={suggestion} key={suggestion.id} />)}
             </div>
+            <button className='feed__suggest' onClick={handleSuggestion}>
+                Add suggestion
+            </button>
         </div>
     );
 }

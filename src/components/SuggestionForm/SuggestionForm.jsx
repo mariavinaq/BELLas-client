@@ -6,7 +6,7 @@ import './SuggestionForm.scss';
 function SuggestionForm({ suggestion }) {
     const navigate = useNavigate();
     const location = useLocation();
-    const suggestionId = location.state?.suggestion.id; 
+    const suggestionId = location.state.suggestion.id; 
     const [email, setEmail] = useState(''); 
     const [checkbox, setCheckbox] = useState(false);
 
@@ -27,16 +27,16 @@ function SuggestionForm({ suggestion }) {
                 optin: checkbox
             }
             await postVote(newVote);
-            navigate('/submitsuggestion'); 
+            navigate('/vote/thanks'); 
         } catch (error) {
             console.error("Error submitting vote:", error); 
         }
     };
 
     return (
-        <>
+        <div className="suggestion-form__container">
             <h1 className="suggestion-form__title">Voting for:</h1>
-            <p className="suggestion-form__description">{suggestion?.suggestion || "No suggestion provided"}</p>
+            <p className="suggestion-form__description">{location.state.suggestion.suggestion || "No suggestion provided"}</p>
 
             <form className="suggestion-form" onSubmit={handleSuggestionClick}>
                 <label htmlFor="email" className="suggestion-form__label">Email</label>
@@ -71,7 +71,7 @@ function SuggestionForm({ suggestion }) {
                     </button>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
 
