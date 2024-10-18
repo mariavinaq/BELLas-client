@@ -3,13 +3,12 @@
 
 
 .submit-form{
-    padding-right:2rem;
-    padding-left:2rem;
     display:flex;
     flex-direction: column;
+    &__container{
+        padding: 4.5rem 3.5rem;
+    }
     &__title{
-        padding-right:2rem;
-        padding-left:2rem;
         color:$color-blue;
         padding-top:1rem ;
         padding-bottom:1rem ;
@@ -17,10 +16,10 @@
         line-height: 3.2rem;
     }
     &__label{
-        font-size: 2rem;
-        color:$color-blue;
-        padding-bottom:6.4rem;
-        padding-top:6.2rem;
+        font-size: 2.5rem;
+        color: $color-blue;
+        margin-top: 3rem;
+        padding-bottom:3rem;
     }
     &__input{
         border: none;
@@ -32,8 +31,6 @@
         &:focus {
             outline: none; 
         }
-        
-
     }
     &__description{
         border: 0.2rem solid $color-grey;
@@ -42,20 +39,21 @@
         height: 15rem;
         color: $color-black;
         border-radius: 2rem;
+        resize: none;
         &:focus {
             outline: none; 
         }
 
     }
     &__buttons{
+        margin-top: 4rem;
         display: flex;
         flex-direction: column;
-        gap:1rem;
-        padding-top:6.2rem;
-
+        gap:1.5rem;
     }
     &__button{
-
+        height: 4.2rem;
+        cursor: pointer;
         &--submit{
         display: inline-flex;
         justify-content: center;
@@ -67,6 +65,18 @@
         letter-spacing: -0.8px;
         color: $color-white;
         border: none;
+        }
+        &--back{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+        border-radius: 2rem;
+        border: 2px solid $color-blue;
+        background-color: white;
+        font-size: 1.6rem;
+        letter-spacing: -0.8px;
+        color: $color-blue;
         }
     }
  

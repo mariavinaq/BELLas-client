@@ -13,6 +13,15 @@ const getSuggestions = async () => {
     }
 };
 
+const postSuggestion = async (suggestion) => {
+    try {
+        const response = await axios.post(`${baseUrl}/suggestions`, suggestion);
+        return response.data;
+    } catch (error) {
+        console.error(`${error.status}: Post request for suggestion failed`);
+    }
+};
+
 const postVote = async (vote) => {
     try {
         const response = await axios.post(`${baseUrl}/votes`, vote);
@@ -22,4 +31,4 @@ const postVote = async (vote) => {
     }
 };
 
-export { getSuggestions, postVote };
+export { getSuggestions, postSuggestion, postVote };
