@@ -6,13 +6,13 @@ function SuggestionOption() {
     return (
         <div className='suggestion'>
             <button className='suggestion__vote suggestion__vote--likes'>
-                <img className='suggestion__vote-heart' src={heart} />
+                <img className='suggestion__heart' src={heart} />
                 784
             </button>
             <p className='suggestion__description'>Renovate children’s hospital</p>
-            <button className='suggestion__vote'>
+            <button className='suggestion__vote suggestion__vote--action'>
                 Vote
-                <img className='suggestion__vote-chevron' src={chevron} />
+                <img className='suggestion__chevron' src={chevron} />
             </button>
         </div>
     );

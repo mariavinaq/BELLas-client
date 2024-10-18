@@ -47,5 +47,11 @@
         font-size: 1.6rem;
         letter-spacing: -0.8px;
         color: $color-blue;
+        cursor: pointer;
+
+        &--selected {
+            background-color: $color-blue;
+            color: white;
+        }
     }
 }

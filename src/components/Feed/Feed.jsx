@@ -34,9 +34,9 @@ function Feed() {
                 <p className='feed__blurb'>Bell is committed to contributing to a better world, community, and workplace. Join us in this mission by voicing your opinion and voting for the change you want to see most in your community. We’ll then partner with a community organization that can make the idea with the most votes a reality.</p>
             </div>
             <div className='feed__filters'>
-                <button className={`feed__button${selectedTop}`} onClick={handleTop}>Top</button>
-                <button className={`feed__button${selectedNew}`} onClick={handleNew}>New</button>
-                <button className={`feed__button${selectedAll}`} onClick={handleAll}>All</button>
+                <button className={`feed__button ${selectedTop ? 'feed__button--selected' : ''}`} onClick={handleTop}>Top</button>
+                <button className={`feed__button ${selectedNew ? 'feed__button--selected' : ''}`} onClick={handleNew}>New</button>
+                <button className={`feed__button ${selectedAll ? 'feed__button--selected' : ''}`} onClick={handleAll}>All</button>
             </div>
             <div className='feed__main'>
                 <SuggestionOption />
