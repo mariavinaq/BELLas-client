@@ -14,7 +14,7 @@ function SuggestionThanks() {
     <div className="container">
       <div className="suggestion-thanks">
         <div className="suggestion-thanks__text">
-          Thank you for being a Bell Change maker!
+          Thank you for being a Bell Changemaker!
         </div>
         <div className="suggestion-thanks__image-container">
           <img
