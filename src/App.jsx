@@ -15,9 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Feed />}></Route>
           <Route path="/vote" element={<SuggestionForm />}></Route>
-          <Route path="/vote/thanks" element={<VoteThanks />} ></Route>
+          <Route path="/vote/thanks" element={<VoteThanks />}></Route>
           <Route path="/submit" element={<SubmitSuggestion />}></Route>
-          <Route path="/submit/thanks" element={<SuggestionThanks />} ></Route>
+          <Route path="/submit/thanks" element={<SuggestionThanks />}></Route>
           {/* {* added for yvonne's testing */}
         </Routes>
       </BrowserRouter>

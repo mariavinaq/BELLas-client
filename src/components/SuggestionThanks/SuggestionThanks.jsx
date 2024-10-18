@@ -1,6 +1,5 @@
 import "./SuggestionThanks.scss";
 import PlantDoodle from "../../assets/images/PlantDoodle.png";
-import uiIcons from "../../assets/images/ui-icons.png";
 import { useNavigate } from "react-router-dom";
 
 function SuggestionThanks() {
