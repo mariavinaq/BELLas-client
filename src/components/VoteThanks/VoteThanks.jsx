@@ -30,13 +30,13 @@ function VoteThanks() {
           className="vote-thanks__button vote-thanks__button--go-suggestion"
           onClick={handleOnClickSuggestion}
         >
-          <p className="vote-thanks__button-text">Submit your suggestion</p>
+          Submit your suggestion
         </button>
         <button
           className="vote-thanks__button vote-thanks__button--go-home"
           onClick={handleOnClick}
         >
-          <p className="vote-thanks__button-text">Back to Home</p>
+          Back to Home
         </button>
       </div>
     </>

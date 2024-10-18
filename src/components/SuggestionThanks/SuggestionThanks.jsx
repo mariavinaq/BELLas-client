@@ -11,27 +11,26 @@ function SuggestionThanks() {
   }
 
   return (
-    <>
+    <div className="container">
       <div className="suggestion-thanks">
         <div className="suggestion-thanks__text">
           Thank you for being a Bell Change maker!
         </div>
         <div className="suggestion-thanks__image-container">
-          {" "}
           <img
             className="suggestion-thanks__image"
             src={PlantDoodle}
             alt="Woman holding plant"
           />
         </div>
+        <button
+          className="suggestion-thanks__button suggestion-thanks__button--go-home"
+          onClick={handleOnClick}
+        >
+          Back to Home
+        </button>
       </div>
-      <button
-        className="suggestion-thanks__button suggestion-thanks__button--go-home"
-        onClick={handleOnClick}
-      >
-        <p className="suggestion-thanks__button-text">Back</p>
-      </button>
-    </>
+    </div>
   );
 }
 
