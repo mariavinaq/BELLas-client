@@ -1,0 +1,33 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.suggestion-thanks {
+    margin-left:4rem;
+    margin-right:4rem;
+    margin-top:4rem;
+
+    &__text {
+        color: $color-blue;
+        font-size: 2.4rem;
+    }
+
+    &__image-container {
+        margin-top: 6rem;
+    }
+
+    &__button {
+        font-size: 2.4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top:10rem;
+        text-align: center;
+        width: 90%;
+        height: 4.5rem;
+        color: #FFFFFF;
+        background-color: $color-blue;
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+
+    }
+}
