@@ -1,0 +1,23 @@
+@use '../../styles/partials/variables.scss' as *;
+
+.header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+    padding: 0 2rem;
+    background-color: $color-blue;
+
+    &__initiatives {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+        font-size: 1.6rem;
+        letter-spacing: -0.8px;
+        color: $color-white;
+        cursor: pointer;
+    }
+}

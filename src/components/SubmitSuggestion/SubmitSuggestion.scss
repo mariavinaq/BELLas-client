@@ -1,50 +1,52 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/global' as *;
 
-.suggestion-form{
+
+.submit-form{
     display:flex;
     flex-direction: column;
-    &__container {
+    &__container{
         padding: 4.5rem 3.5rem;
     }
     &__title{
         color:$color-blue;
-        padding-top:1rem;
-        padding-bottom:1.5rem; 
+        padding-top:1rem ;
+        padding-bottom:1rem ;
         font-size: 3.2rem;
         line-height: 3.2rem;
     }
-    &__description{
-        font-size: 1rem;
-        padding-bottom: 4rem;
-        font-size: 1.6rem;
-    }
     &__label{
         font-size: 2.5rem;
-        color:$color-blue;
-        margin-top: 2rem;
+        color: $color-blue;
+        margin-top: 3rem;
         padding-bottom:3rem;
     }
     &__input{
         border: none;
         border-bottom: 0.2rem solid $color-grey;
         padding-bottom:0.8rem;
-        color: $color-black;
         font-size: 1.6rem;
+        height: 4.5rem;
+        color: $color-black;
         &:focus {
             outline: none; 
         }
     }
-    &__notify{
-        display: flex;
-        flex-direction: row;
-        gap:1rem;
+    &__description{
+        border: 0.2rem solid $color-grey;
+        padding:1rem;
         font-size: 1.6rem;
-        color:$color-black;
-        padding-bottom:24rem;
-        padding-top:1.5rem;
+        height: 15rem;
+        color: $color-black;
+        border-radius: 2rem;
+        resize: none;
+        &:focus {
+            outline: none; 
+        }
+
     }
     &__buttons{
+        margin-top: 4rem;
         display: flex;
         flex-direction: column;
         gap:1.5rem;
