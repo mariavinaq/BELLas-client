@@ -2,7 +2,7 @@
 
 .header {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 8rem;
@@ -19,5 +19,9 @@
         letter-spacing: -0.8px;
         color: $color-white;
         cursor: pointer;
+    }
+
+    &__logo {
+        height: 3.2rem;
     }
 }
