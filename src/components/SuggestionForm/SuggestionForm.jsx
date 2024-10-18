@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { postSuggestion } from '../../api'; 
+import { postVote } from '../../api'; 
 import './SuggestionForm.scss';
 
-function SuggestionForm() {
+function SuggestionForm({ suggestion }) {
     const navigate = useNavigate();
     const location = useLocation();
-    const suggestion = location.state?.suggestion; 
+    const suggestionId = location.state?.suggestion.id; 
     const [email, setEmail] = useState(''); 
+    const [checkbox, setCheckbox] = useState(false);
 
     const handleHomeClick = () => {
         navigate('/'); 
     };
 
+    const handleCheckbox = () => {
+        checkbox? setCheckbox(false) : setCheckbox(true);
+    };
+
     const handleSuggestionClick = async (e) => {
         e.preventDefault(); 
-
-        if (!suggestion) {
-            console.error("No suggestion provided.");
-            return;
-        }
-
         try {
-            
-            await postSuggestion({ email, suggestionId: suggestion.id });
-
+            const newVote = {
+                suggestion_id: suggestionId,
+                email: e.target.email.value,
+                optin: checkbox
+            }
+            await postVote(newVote);
             navigate('/submitsuggestion'); 
         } catch (error) {
             console.error("Error submitting vote:", error); 
@@ -41,6 +43,7 @@ function SuggestionForm() {
                 <input
                     type="email"
                     id="email"
+                    name="email"
                     className="suggestion-form__input"
                     placeholder="Enter your email address"
                     value={email}
@@ -50,10 +53,11 @@ function SuggestionForm() {
 
                 <div className="suggestion-form__notify">
                     <input
-                        type="radio"
+                        type="checkbox"
                         id="notify"
                         name="notification"
                         className="suggestion-form__radio"
+                        onClick={handleCheckbox}
                     />
                     <label htmlFor="notify" className="suggestion-form__radio-label">Notify me when this change is in action</label>
                 </div>
