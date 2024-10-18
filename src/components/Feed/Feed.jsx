@@ -19,7 +19,7 @@ function Feed() {
                     const topThree = (sorted.slice(0, 3))
                     setSuggestionsList(topThree);
                 } else if (selectedNew) {
-                    const sorted = suggestions.sort((a, b) => b.timestamp - a.timestamp)
+                    const sorted = suggestions.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
                     setSuggestionsList(sorted);
                 } else if (selectedAll) {
                     setSuggestionsList(suggestions);
