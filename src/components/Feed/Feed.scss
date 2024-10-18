@@ -1,78 +1,77 @@
-@use '../../styles/partials/mixins.scss' as *;
-@use '../../styles/partials/variables.scss' as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
 
 .feed {
-    padding: 4.5rem 0;
-    min-height: 100vh; 
+  padding: 4.5rem 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__hero {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: baseline;
+    gap: 3rem;
+    padding: 0 3.25rem;
+  }
 
-    &__hero {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        gap: 3rem;
-        padding: 0 3.25rem;
+  &__logo {
+    height: 3.2rem;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+    color: $color-blue;
+  }
+
+  &__blurb {
+    font-size: 1.6rem;
+    line-height: 1.84rem;
+    letter-spacing: -0.8px;
+  }
+
+  &__filters {
+    display: flex;
+    gap: 1rem;
+    padding: 3rem 3.5rem 1.75rem;
+  }
+
+  &__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    border: 2px solid $color-blue;
+    background-color: $color-white;
+    font-size: 1.6rem;
+    letter-spacing: -0.8px;
+    color: $color-blue;
+    cursor: pointer;
+
+    &--selected {
+      background-color: $color-blue;
+      color: $color-white;
     }
+  }
 
-    &__logo {
-        height: 3.2rem;
-    }
-
-    &__title {
-        font-size: 3.2rem;
-        line-height: 3.2rem;
-        color: $color-blue;
-    }
-
-    &__blurb {
-        padding: 0 1.6rem;
-        font-size: 1.6rem;
-        line-height: 1.84rem;
-        letter-spacing: -0.8px;
-    }
-
-    &__filters {
-        display: flex;
-        gap: 1rem;
-        padding: 3rem 3.5rem 1.75rem;
-    }
-
-    &__button {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 5rem;
-        padding: 0.6rem 1.2rem;
-        border-radius: 2rem;
-        border: 2px solid $color-blue;
-        background-color: $color-white;
-        font-size: 1.6rem;
-        letter-spacing: -0.8px;
-        color: $color-blue;
-        cursor: pointer;
-
-        &--selected {
-            background-color: $color-blue;
-            color: $color-white;
-        }
-    }
-
-    &__suggest {
-        display: flex;
-        justify-content: center; 
-        align-items: center;
-        position: fixed; 
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 8rem;
-        color: $color-white;
-        background-color: $color-blue;
-        border: none;
-        text-align: center;
-    }
+  &__suggest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    color: $color-white;
+    background-color: $color-blue;
+    border: none;
+    text-align: center;
+  }
 
     &__plus {
         width: 2rem;
