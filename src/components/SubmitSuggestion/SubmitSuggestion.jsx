@@ -1,7 +1,14 @@
 import React from 'react'
 import './submitsuggestion.scss'
+import { useNavigate } from 'react-router-dom';
+
 
 function SubmitSuggestion() {
+    const navigate = useNavigate();
+    const handleThanksClick = () => {
+        navigate('/suggestion/thanks')
+    };
+    
   return (
     <>
         <h1 className="submit-form__title">Your suggestion</h1>
@@ -22,14 +29,15 @@ function SubmitSuggestion() {
                 placeholder="Enter your email address"
             />
             <label htmlFor="email" className="submit-form__label">Problem</label>
-            <input
-                type="email"
-                id="email"
+            <textarea
+                id="problem"
                 className="submit-form__description"
                 placeholder=" "
+                rows="4" 
+                cols="50" 
             />
             <div className="submit-form__buttons">
-                <button type="button" className="submit-form__button submit-form__button--submit">Submit your suggestion</button>
+                <button type="button" className="submit-form__button submit-form__button--submit" onClick={handleThanksClick}>Submit your suggestion</button>
             </div>
         </form>
       </>

@@ -13,12 +13,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Feed />}></Route>
-          <Route path="/suggestion" element={<SuggestionForm />}></Route>
-          <Route
-            path="/suggestion/thanks"
-            element={<SuggestionThanks />}
-          ></Route>
           <Route path="/vote" element={<SuggestionForm />}></Route>
+          <Route path="/suggestion/thanks" element={<SuggestionThanks />} ></Route>
           <Route path="/submitsuggestion" element={<SubmitSuggestion />}></Route>
           {/* {* added for yvonne's testing */}
         </Routes>
