@@ -18,7 +18,6 @@ function App() {
           <Route path="/vote/thanks" element={<VoteThanks />}></Route>
           <Route path="/submit" element={<SubmitSuggestion />}></Route>
           <Route path="/submit/thanks" element={<SuggestionThanks />}></Route>
-          {/* {* added for yvonne's testing */}
         </Routes>
       </BrowserRouter>
     </>
