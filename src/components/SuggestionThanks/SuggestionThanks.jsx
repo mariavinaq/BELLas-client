@@ -29,7 +29,7 @@ function SuggestionThanks() {
         className="suggestion-thanks__button suggestion-thanks__button--go-home"
         onClick={handleOnClick}
       >
-        <p className="suggestion-thanks__button-text">Back</p>
+        Back to Home
       </button>
     </>
   );
