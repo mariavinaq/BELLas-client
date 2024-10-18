@@ -2,7 +2,7 @@ import './SuggestionForm.scss';
 function SuggestionForm() {
     return (
         <>
-        <h1 className="suggestion-form__title">Voting for:</h1>
+        <p className="suggestion-form__title">Voting for:</p>
         <p className="suggestion-form__description">After-school program for elementary school kids</p>
      
         <form className="suggestion-form" action="submit">
