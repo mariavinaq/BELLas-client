@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "BellSlim";
+  src: url("/src/assets/fonts/BellSlim-Black.woff2") format("woff2"), url("/src/assets/font/sBellSlim-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-family: "BellSlim", Helvetica, Arial, sans-serif;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}/*# sourceMappingURL=App.css.map */
