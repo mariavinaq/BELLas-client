@@ -1,42 +1,43 @@
-@use '../../styles/partials/mixins.scss' as *;
-@use '../../styles/partials/variables.scss' as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
 
 .suggestion {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 2.4rem 3.2rem;
+  border-top: 1px solid #939393;
+  border-bottom: 1px solid #939393;
+
+  &__description {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
-    padding: 2.3rem 0;
-    border-top: 1px solid #939393;
-    border-bottom: 1px solid #939393;
+    flex: 1;
+    font-size: 1.6rem;
+    letter-spacing: -0.8px;
+    padding-right: 1.6rem;
+  }
 
-    &__description {
-        display: flex;
-        align-items: center;
-        flex: 1;
-        font-size: 1.6rem;
-        letter-spacing: -0.8px;
+  &__vote {
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    border: none;
+    font-size: 1.6rem;
+    text-align: right;
+    letter-spacing: -0.8px;
+
+    &--likes {
+      color: $color-blue;
+      width: 20%;
     }
 
-    &__vote {
-        display: flex;
-        align-items: center;
-        background-color: $color-white;
-        padding: 0 2.35rem; 
-        border: none;
-        font-size: 1.6rem;
-        text-align: center;
-        letter-spacing: -0.8px;
-
-        &--likes {
-            color: $color-blue;
-        }
-
-        &--action {
-            cursor: pointer;
-        }
+    &--action {
+      cursor: pointer;
     }
+  }
 
-    &__heart {
-        margin-right: 0.5rem;
-    }
+  &__heart {
+    margin-right: 0.5rem;
+  }
 }
