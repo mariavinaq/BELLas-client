@@ -1,12 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getSuggestions } from '../../api';
 import logo from '../../assets/images/Bell_logo.svg'
 import SuggestionOption from '../SuggestionOption/SuggestionOption';
 import './Feed.scss';
 
 function Feed() {
+    const [suggestionsList, setSuggestionsList] = useState([]);
     const [selectedTop, setSelectedTop] = useState(true);
     const [selectedNew, setSelectedNew] = useState(false);
     const [selectedAll, setSelectedAll] = useState(false);
+
+    useEffect(() => {
+        const retrieveSuggestions = async () => {
+            const suggestions = await getSuggestions();
+            if (suggestions) {
+                if (selectedTop) {
+                    const sorted = suggestions.sort((a, b) => b.votes - a.votes)
+                    const topThree = (sorted.slice(0, 3))
+                    setSuggestionsList(topThree);
+                } else if (selectedNew) {
+                    const sorted = suggestions.sort((a, b) => b.timestamp - a.timestamp)
+                    setSuggestionsList(sorted);
+                } else if (selectedAll) {
+                    setSuggestionsList(suggestions);
+                }
+            };
+        }
+        retrieveSuggestions();
+    }, [suggestionsList])
 
     const handleTop = () => {
         setSelectedTop(true);
@@ -39,7 +60,7 @@ function Feed() {
                 <button className={`feed__button ${selectedAll ? 'feed__button--selected' : ''}`} onClick={handleAll}>All</button>
             </div>
             <div className='feed__main'>
-                <SuggestionOption />
+                {suggestionsList.map(suggestion => <SuggestionOption suggestion={suggestion} key={suggestion.id} />)}
             </div>
         </div>
     );
