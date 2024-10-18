@@ -26,7 +26,7 @@ function SubmitSuggestion() {
                 type="email"
                 id="email"
                 className="submit-form__description"
-                placeholder="Type your idea here."
+                placeholder=" "
             />
             <div className="submit-form__buttons">
                 <button type="button" className="submit-form__button submit-form__button--submit">Submit your suggestion</button>

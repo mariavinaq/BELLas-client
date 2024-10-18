@@ -24,25 +24,28 @@
         border: none;
         border-bottom: 0.2rem solid $color-grey;
         padding-bottom:0.8rem;
-        color: $color-grey;
         font-size: 1.6rem;
+        height: 4.5rem;
+        color: $color-black;
     }
-    &__notify{
-        display: flex;
-        flex-direction: row;
-        gap:1rem;
+    &__description{
+        border: 0.2rem solid $color-grey;
+        padding-bottom:4rem;
         font-size: 1.6rem;
-        color:$color-blue;
-        padding-bottom:24rem;
-        padding-top:1.1rem;
+        height: 15rem;
+        color: $color-black;
+        border-radius: 2rem;
+
     }
     &__buttons{
         display: flex;
         flex-direction: column;
         gap:1rem;
-        
+        padding-top:6.2rem;
+
     }
     &__button{
+
         &--submit{
         display: inline-flex;
         justify-content: center;
