@@ -99,7 +99,7 @@ function Feed() {
         ))}
       </div>
       <button className="feed__suggest" onClick={handleSuggestion}>
-        Add suggestion
+        Have a suggestion? Submit now!
       </button>
     </div>
   );
