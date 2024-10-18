@@ -6,8 +6,11 @@
     display:flex;
     flex-direction: column;
     height: 100%;
+    background-color: $color-white;
+
     &__container{
         padding: 4.5rem 3.5rem;
+        background-color: $color-white;
     }
     &__title{
         color:$color-blue;
