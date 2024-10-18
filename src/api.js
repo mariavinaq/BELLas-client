@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseUrl = 'http://localhost:8080';
-// const baseUrl = 'http://localhost:5050';
+// const baseUrl = 'http://localhost:8080';
+const baseUrl = 'http://localhost:5050';
 
 
 const getSuggestions = async () => {

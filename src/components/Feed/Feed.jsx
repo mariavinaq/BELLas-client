@@ -69,7 +69,7 @@ function Feed() {
                 {suggestionsList.map(suggestion => <SuggestionOption suggestion={suggestion} key={suggestion.id} />)}
             </div>
             <button className='feed__suggest' onClick={handleSuggestion}>
-                Add suggestion
+                Have a Suggestion? Submit it now!
             </button>
         </div>
     );

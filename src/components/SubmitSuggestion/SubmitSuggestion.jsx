@@ -69,4 +69,4 @@ function SubmitSuggestion() {
   )
 }
 
-export default SubmitSuggestion
+export default SubmitSuggestion;
