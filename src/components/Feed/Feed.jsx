@@ -1,8 +1,13 @@
+import logo from '../../assets/images/Bell_logo.svg'
 import './Feed.scss';
 
 function Feed () {
     return (
-        <div>Feed</div>
+        <div>
+            <div>
+                <img src={logo} />
+            </div>
+        </div>
     );
 }
 
