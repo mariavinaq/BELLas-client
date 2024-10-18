@@ -4,6 +4,7 @@ import SuggestionForm from "./components/SuggestionForm/SuggestionForm";
 import SuggestionThanks from "./components/SuggestionThanks/SuggestionThanks";
 import Header from "./components/Header/Header";
 import "./App.scss";
+import SubmitSuggestion from "./components/SubmitSuggestion/SubmitSuggestion";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             element={<SuggestionThanks />}
           ></Route>
           <Route path="/vote" element={<SuggestionForm />}></Route>
+          <Route path="/submitsuggestion" element={<SubmitSuggestion />}></Route>
           {/* {* added for yvonne's testing */}
         </Routes>
       </BrowserRouter>
