@@ -1,5 +1,4 @@
-import React from 'react'
-import './submitsuggestion.scss'
+import './SubmitSuggestion.scss'
 import { useNavigate } from 'react-router-dom';
 import { postSuggestion } from '../../api';
 
