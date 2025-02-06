@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { getSuggestions } from "../../api";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/images/Bell_logo.svg";
 import SuggestionOption from "../SuggestionOption/SuggestionOption";
+import Loader from "../Loader/Loader";
 import "./Feed.scss";
 
 function Feed() {
@@ -11,6 +11,7 @@ function Feed() {
   const [selectedTop, setSelectedTop] = useState(true);
   const [selectedNew, setSelectedNew] = useState(false);
   const [selectedAll, setSelectedAll] = useState(false);
+  const [dataLoading, setDataLoading] = useState(true);
 
   useEffect(() => {
     const retrieveSuggestions = async () => {
@@ -20,6 +21,7 @@ function Feed() {
           const sorted = suggestions.sort((a, b) => b.votes - a.votes);
           const topThree = sorted.slice(0, 3);
           setSuggestionsList(topThree);
+          setDataLoading(false);
         } else if (selectedNew) {
           const sorted = suggestions.sort(
             (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
@@ -94,7 +96,7 @@ function Feed() {
         </button>
       </div>
       <div className="feed__main">
-        {suggestionsList.map((suggestion) => (
+        {dataLoading ? <Loader /> : suggestionsList.map((suggestion) => (
           <SuggestionOption suggestion={suggestion} key={suggestion.id} />
         ))}
       </div>
