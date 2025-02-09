@@ -7,6 +7,7 @@ import "./Feed.scss";
 
 function Feed() {
   const navigate = useNavigate();
+  const [suggestions, setSuggestions] = useState([]);
   const [suggestionsList, setSuggestionsList] = useState([]);
   const [selectedTop, setSelectedTop] = useState(true);
   const [selectedNew, setSelectedNew] = useState(false);
@@ -15,39 +16,40 @@ function Feed() {
 
   useEffect(() => {
     const retrieveSuggestions = async () => {
-      const suggestions = await getSuggestions();
-      if (suggestions) {
-        if (selectedTop) {
-          const sorted = suggestions.sort((a, b) => b.votes - a.votes);
-          const topThree = sorted.slice(0, 3);
-          setSuggestionsList(topThree);
-          setDataLoading(false);
-        } else if (selectedNew) {
-          const sorted = suggestions.sort(
-            (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
-          );
-          setSuggestionsList(sorted);
-        } else if (selectedAll) {
-          setSuggestionsList(suggestions);
-        }
-      }
+      const fetchedSuggestions = await getSuggestions();
+      setSuggestions(fetchedSuggestions)
+      const sorted = suggestions.sort((a, b) => b.votes - a.votes);
+      const topThree = sorted.slice(0, 3);
+      setSuggestionsList(topThree);
+      setDataLoading(false);
     };
     retrieveSuggestions();
-  }, [suggestionsList]);
+  }, []);
 
   const handleTop = () => {
+    const sorted = suggestions.sort((a, b) => b.votes - a.votes);
+    const topThree = sorted.slice(0, 3);
+    setSuggestionsList(topThree);
     setSelectedTop(true);
     setSelectedNew(false);
     setSelectedAll(false);
   };
 
   const handleNew = () => {
+    const sorted = suggestions.sort(
+      (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+    );
+    setSuggestionsList(sorted);
     setSelectedTop(false);
     setSelectedNew(true);
     setSelectedAll(false);
   };
 
   const handleAll = () => {
+    const unsorted = suggestions.sort(
+      (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
+    );
+    setSuggestionsList(unsorted);
     setSelectedTop(false);
     setSelectedNew(false);
     setSelectedAll(true);
