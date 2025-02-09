@@ -17,11 +17,13 @@ function Feed() {
   useEffect(() => {
     const retrieveSuggestions = async () => {
       const fetchedSuggestions = await getSuggestions();
-      setSuggestions(fetchedSuggestions)
-      const sorted = suggestions.sort((a, b) => b.votes - a.votes);
-      const topThree = sorted.slice(0, 3);
-      setSuggestionsList(topThree);
-      setDataLoading(false);
+      if (fetchedSuggestions) {
+        setSuggestions(fetchedSuggestions)
+        const sorted = fetchedSuggestions.sort((a, b) => b.votes - a.votes);
+        const topThree = sorted.slice(0, 3);
+        setSuggestionsList(topThree);
+        setDataLoading(false);
+      }
     };
     retrieveSuggestions();
   }, []);
